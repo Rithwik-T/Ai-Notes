@@ -7,11 +7,13 @@ import { noteService } from '../services/noteService';
 import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/ui/Button';
 import { StorageImage } from '../components/ui/StorageImage';
+import { CheckoutModal } from '../components/ui/CheckoutModal';
 
 export const DashboardLayout: React.FC = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   
   // Search State
@@ -211,6 +213,20 @@ export const DashboardLayout: React.FC = () => {
             {isAuthenticated ? (
                 /* Authenticated User Menu */
                 <div className="flex items-center gap-4" ref={menuRef}>
+                  {user?.plan === 'pro' ? (
+                    <div className="hidden sm:flex items-center gap-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-3 py-1 text-[11px] font-bold tracking-wide text-white shadow-sm">
+                      <Sparkles size={12} />
+                      <span>PRO</span>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => setIsCheckoutOpen(true)}
+                      className="hidden sm:flex items-center gap-1.5 rounded-full bg-slate-100 border border-slate-200 px-3 py-1 text-[11px] font-bold tracking-wide text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 transition-colors shadow-sm group"
+                    >
+                      <span>FREE</span>
+                      <span className="bg-slate-200 text-slate-500 px-1.5 rounded text-[9px] uppercase group-hover:bg-indigo-100 group-hover:text-indigo-500 transition-colors">Upgrade</span>
+                    </button>
+                  )}
                   <div className="relative">
                     <button 
                       type="button"
@@ -293,6 +309,12 @@ export const DashboardLayout: React.FC = () => {
           <Outlet />
         </div>
       </main>
+
+      <CheckoutModal 
+        isOpen={isCheckoutOpen} 
+        onClose={() => setIsCheckoutOpen(false)} 
+        onSuccess={() => {}} 
+      />
     </div>
   );
 };

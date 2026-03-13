@@ -69,6 +69,12 @@ export const CreateNote: React.FC = () => {
   }, [id, navigate, user]);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (user?.plan !== 'pro') {
+      e.preventDefault();
+      e.target.value = '';
+      setIsCheckoutOpen(true);
+      return;
+    }
     const file = e.target.files?.[0];
     if (file) {
       const url = URL.createObjectURL(file);
@@ -77,6 +83,12 @@ export const CreateNote: React.FC = () => {
   };
 
   const handleAttachmentUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (user?.plan !== 'pro') {
+      e.preventDefault();
+      e.target.value = '';
+      setIsCheckoutOpen(true);
+      return;
+    }
     if (e.target.files && e.target.files.length > 0) {
       const newFiles = Array.from(e.target.files);
       setNewAttachments((prev) => [...prev, ...newFiles]);
