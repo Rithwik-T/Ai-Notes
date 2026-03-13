@@ -71,7 +71,7 @@ export const Home: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-white/70 border border-white/50 px-3 py-1 text-[11px] font-bold tracking-wide text-indigo-600 uppercase shadow-[0_2px_10px_rgba(99,102,241,0.1)] backdrop-blur-md ring-1 ring-white/40">
                 <Sparkles size={11} className="fill-indigo-500/20 text-indigo-600" />
-                <span>AI Workspace</span>
+                <span>AURA Ai Workspace</span>
             </div>
             <div className="inline-flex items-center gap-1.5 rounded-full bg-white/40 border border-white/30 px-3 py-1 text-[11px] font-bold tracking-wide text-slate-500 uppercase backdrop-blur-md">
                 <ShieldCheck size={11} className="text-slate-400" />
@@ -85,8 +85,8 @@ export const Home: React.FC = () => {
             </h1>
             <p className="text-slate-600 text-lg sm:text-xl font-medium leading-relaxed tracking-normal max-w-lg">
               {isAuthenticated 
-                ? 'Your AI-Powered workspace — clean, fast, and beautifully organized.' 
-                : 'Your AI-powered workspace — clean, fast, and beautifully organized. Sign in to start creating notes.'
+                ? 'Your AURA Ai-Powered workspace — clean, fast, and beautifully organized.' 
+                : 'Your AURA Ai-powered workspace — clean, fast, and beautifully organized. Sign in to start creating notes.'
               }
             </p>
           </div>

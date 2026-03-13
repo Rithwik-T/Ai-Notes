@@ -102,7 +102,7 @@ export const SignIn: React.FC = () => {
               Welcome Back
             </h1>
             <p className="mt-2.5 text-[15px] font-medium text-slate-500 text-center max-w-[280px] leading-relaxed">
-              Enter your credentials to access your AI workspace.
+              Enter your credentials to access your AURA Ai workspace.
             </p>
 
             {/* Success Message Banner */}

@@ -112,7 +112,7 @@ export const DashboardLayout: React.FC = () => {
       
       {/* Mobile Header */}
       <div className="md:hidden flex items-center justify-between border-b border-white/60 bg-white/60 backdrop-blur-2xl px-4 py-3 sticky top-0 z-50">
-         <span className="font-bold text-slate-900 tracking-tight">AI Notes</span>
+         <span className="font-bold text-slate-900 tracking-tight">AURA Ai</span>
          <button className="text-slate-500 hover:text-slate-900 hover:bg-white/50 p-1 rounded-md transition-colors">
            <Menu size={20} />
          </button>

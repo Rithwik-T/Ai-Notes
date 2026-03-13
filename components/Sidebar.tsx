@@ -46,7 +46,7 @@ export const Sidebar: React.FC = () => {
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 transition-transform group-hover:scale-105 group-hover:rotate-3">
             <Command size={20} />
           </div>
-          <span className="text-xl tracking-tight text-slate-800">AI Notes</span>
+          <span className="text-xl tracking-tight text-slate-800">AURA Ai</span>
         </div>
       </div>
 
